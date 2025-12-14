@@ -1,0 +1,49 @@
+.home-container {
+  display: flex;
+  /* border: px solid silver; */
+}
+
+.invitations-sidebar {
+  width: 15%; /* Adjust the width as needed */
+  background-color: #ffffff;
+  color: #000000;
+  margin: 60px 5px 10px 0px; /* Adjust the margins as needed */
+  padding: 0px; /* Adjust the padding as needed */
+}
+
+.invitations-sidebar h2 {
+  color: rgb(61, 61, 61);
+  margin: 10px 0;
+  padding: 0;
+  border: 2px solid silver;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.invitation {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 5px; /* Adjust the margin as needed */
+  border: 1px solid silver;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.invitation-profile {
+  width: 10%; /* Adjust the width as needed */
+  height:20%; /* Adjust the height as needed */
+  border-radius: 50%;
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.invitation-details {
+  flex-grow: 1;
+}
+
+.invitation-buttons button {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000;
+  padding: 5px;
+  cursor: pointer;
+}

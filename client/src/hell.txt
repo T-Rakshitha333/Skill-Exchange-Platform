@@ -1,0 +1,40 @@
+return (
+    <div className="users-container">
+      <h1 className="heading">Here We GO</h1>
+      <div className="users-list">
+        {data.length > 0
+          ? data.map((user) => (
+            // User card with a nested Link for navigation
+            <div key={user.id} className="user-card">
+              <Link to={`/Profile/${user.id}`}>
+                <div className="user-profile">
+                  <img src={user.profileImage} alt="Profile Icon" className="profile-icon" />
+                  <div className="user-details">
+                    <h3 className="user-name">{user.name}</h3>
+                    <p className="user-email">{user.email}</p>
+                  </div>
+                </div>
+                <div className="user-skills-interests">
+                  <p className="user-skills">
+                    Skills: {Array.isArray(user.skills) ? user.skills.join(', ') : user.skills}
+                  </p>
+                  <p className="user-interests">
+                    Interests: {Array.isArray(user.interests) ? user.interests.join(', ') : user.interests}
+                  </p>
+                </div>
+              </Link>
+              {/* Connect button outside of Link */}
+              <div className="connect-button" onClick={() => handleConnectClick(user.id)}>
+                Connect
+              </div>
+            </div>
+          ))
+          : (
+            <p className="no-users-found">No users found.</p>
+          )}
+      </div>
+    </div>
+  );
+};
+
+export default Home;

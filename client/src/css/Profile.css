@@ -1,0 +1,122 @@
+/* General styling */
+body {
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+  color: #212529; /* Text color */
+}
+
+/* Profile container */
+.profile-container {
+  width: 40%;
+  margin: 80px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  position: relative;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-image {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #212529;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-details {
+  padding: 0px 60px; /* Added padding to create space */
+  flex: 1;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #212529; /* Heading text color */
+}
+
+p {
+  font-size: 16px;
+  color: #212529; /* Text color */
+}
+
+/* Connect button */
+/* .connect-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+} */
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: 2px solid white;
+  border-radius: 100px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Skills and Interests */
+.skills-interests {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0px;
+}
+
+.profile-skills,
+.profile-interests {
+  flex: 1;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #212529;
+}
+
+.collection {
+  display: flex;
+}
+
+.chip {
+  border: 1px solid  #212529;
+  border-radius: 20px;
+  padding: 6px 16px;
+  margin: 3px;
+}
+
+/* Additional styling for email */
+#lightcol {
+  color:  #212529;
+}
+
+/* .edit-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #007bff; 
+  margin-left: 10px; 
+}
+
+.edit-icon:hover {
+  color: #0056b3; 
+} */
