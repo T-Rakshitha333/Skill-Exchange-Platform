@@ -1,0 +1,209 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar-left {
+  width: 17%;
+  background-color: #202123;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 5px;
+}
+
+.dropup-container {
+  position: relative;
+  bottom: 5px;
+}
+
+
+.items .brand h3 {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.items .menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu .menu-item{
+  width: 100%;
+}
+
+.menu .menu-item button{
+  text-align: left;
+}
+
+/* Profile button styles */
+.profile-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  /* Add smooth transition for width change */
+}
+
+/* Profile button hover effect */
+.profile-button:hover {
+  background-color: #343541;
+}
+
+/* Hidden division for the logout button */
+.logout-division {
+  display: none;
+  background-color: #fff;
+  color: #333;
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  z-index: 1;
+}
+
+/* Logout button styles */
+.logout-button {
+  background-color: #ff3333;
+  width: 100%;
+  color: #fff;
+  border: none;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Sidebar button styles */
+.sidebar-button {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar-button i{
+  margin: 0 15px 0 0;
+}
+/* Sidebar button hover effect */
+.sidebar-button:hover {
+  background-color: #494949;
+}
+
+/* Style for the dropup container */
+.dropup-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+}
+
+/* Style for the main content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 20%;
+
+  }
+
+  /* Style for the right sidebar (scrolls with content) */
+  .sidebar-right {
+    width: 18%;
+    background-color: #212121;
+    color: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    position: sticky;
+  }
+
+  /* Adjust the right sidebar position */
+  .sidebar-right p {
+    position: absolute;
+    top: 20px;
+    /* Adjust as needed */
+  }
+
+.profile-menu {
+  background-color: #050509;
+  width: inherit;
+}
+
+.profile-menu-item {
+  color: white;
+}
+
+.profile-menu-item:hover {
+  background-color: #343541;
+  color: white;
+}
+
+.profile-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.profile-group .details .profile-pic {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+}
+
+.details{
+  display: flex;
+  align-items: center;
+}
+
+.profile-group .profile-pic img {
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+}
+
+.profile-group .three-dots{
+  width: 20%;
+}
+
+#logout {
+  margin: 0 10px;
+}
+
+/* .active{
+  font-weight: bold;
+} */

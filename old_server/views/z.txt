@@ -1,0 +1,174 @@
+ <div class="sidebar-right">
+        <!-- Right Sidebar Content -->
+        <div class="connection-req">
+          <h4>Invitations</h4>
+          <% currentUser.requests.forEach(name=> { %>
+            <div class="button-container">
+              <div class="c-uname">
+                <h4>
+                  <%= name%>
+                </h4>
+              </div>
+              <div class="res">
+                <button><i class="fa-regular fa-circle-check"></i></button>
+                <button><i class="fa-regular fa-circle-xmark"></i></button>
+              </div>
+              <% }) %>
+            </div>
+        </div>
+
+
+
+User.find({
+  $or: [
+    {
+      $or: [
+        { skills: { $elemMatch: { $in: currentUserInterests } } },
+        { interests: { $elemMatch: { $in: currentUserSkills } } },
+      ],
+    },
+    {
+      $or: [
+        { skills: { $elemMatch: { $in: currentUserSkills } } },
+        { interests: { $elemMatch: { $in: currentUserInterests } } },
+      ],
+    },
+  ],
+})
+
+
+
+ User.find({
+      $or: [
+        {
+          $and: [
+            { skills: { $elemMatch: { $in: currentUserInterests } } },
+            { interests: { $elemMatch: { $in: currentUserSkills } } },
+          ],
+        },{
+          $and: [
+            { skills: { $elemMatch: { $in: currentUserSkills } } },
+            { interests: { $elemMatch: { $in: currentUserInterests } } },
+          ],
+        },
+      ],
+    })
+
+
+
+     User.find({
+      skills: { $elemMatch: { $in: currentUserInterests } }
+    })
+      .then((matchedUsers) => {
+        // Process the matched users
+        updatedMatchedUsers = matchedUsers.filter(
+          (user) => user.username !== currentUser.username
+        );
+        console.log(updatedMatchedUsers);
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+      });
+
+
+
+db.users.update({ username: 'user15' },{$set: {skills: ["C", "Java", "React"],interests: [ "HTML", "CSS", "Node.js" ]}})
+
+
+db.users.insertOne({username: 'user10',email: 'user10@example.com',password: '123', skills: ["C", "node js"],interests: [ "CSS" ],})
+
+db.users.deleteMany({$or: [{ username: 'guru' },{ username: 'akash' },{ username: 'dinesh' },{ username: 'user10' }]})
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>User Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            width: 50%;
+        }
+
+        .input-label {
+            margin-bottom: 8px;
+        }
+
+        .input-field {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #555;
+        }
+
+        #messageContainer {
+            display: none;
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <button id="createPlaygroundBtn">Create Playground</button>
+
+    
+
+    <script>
+        
+    </script>
+</body>
+</html>
+
+
+
+db.users.updateOne({ username:  'user1'}, {$set: { interests: ['HTML', 'CSS'] }})

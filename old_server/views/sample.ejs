@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="ta">
+            abcd
+        </textarea>
+    <button id="sendDataButton">submit</button>
+
+    <script>
+        sendDataButton = document.getElementById('sendDataButton')
+        sendDataButton.addEventListener('click', function () {
+            const data = document.getElementById('ta').innerHTML;
+            fetch('/sendData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain',
+                },
+                body: data,
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Response from server:', data);
+                })
+                .catch((error) => {
+                    console.error('Error sending data to server:', error);
+                });
+        });
+    </script>
+
+</body>
+</html>

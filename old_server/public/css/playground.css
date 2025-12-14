@@ -1,0 +1,192 @@
+/* Create a container for both left and right sections */
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 100%;
+    border: 1px solid silver;
+}
+
+.container .left, .container .right {
+    flex: 0 0 48%; /* Adjust width as needed */
+    margin: 10px; /* Add margin for spacing */
+    border: 1px solid silver;
+
+}
+
+/* sdfldsjflk */
+.top-bar{
+    background-color: #202123;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    margin: 15px 0;
+}
+
+.container .left {
+    
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid silver;
+
+}
+
+.container .right {
+    
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid silver;
+
+}
+
+.container h1 {
+    color: #333;
+
+    
+}
+
+
+.red-letter {
+color: red;
+}
+
+
+/* Styles for the milestone list */
+.milestone-list {
+    list-style: none;
+    padding: 0;
+    
+}
+
+.milestone-item {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.milestone-name {
+    font-weight: bold;
+}
+
+.milestone-status {
+    color: green;
+}
+
+/* Styles for the checkbox */
+.checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid silver;
+}
+
+/* Checkbox checked style */
+.checkbox input[type="checkbox"]:checked + .checkmark {
+    display: block;
+}
+
+/* Progress bar styles */
+.progress-bar-container {
+    width: 100%;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin: 0%;
+    border: 4px solid silver;
+    margin: 30px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    background-color: #333;
+    transition: width 0.3s;
+}
+.navbar {
+    width: 100%;
+display: flex;
+justify-content: start;
+
+border: 2px solid silver;
+
+background-color: rgb(11, 10, 10);
+padding: 10px 0px; /* Adjust padding as needed */
+}
+
+
+.nav-button {
+background-color: hsl(0, 0%, 100%);
+border: none;
+color: #404040;
+padding: 10px 20px; /* Adjust padding as needed */
+margin: 0 10px; /* Adjust margin for spacing */
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+/* Style the buttons on hover */
+.nav-button:hover {
+background-color: #f2f2f2;
+}
+
+.more i{
+    color: white;
+    margin: 0 20px;
+}
+
+.options{
+    display: flex;
+}
+
+.more{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.more:hover{
+    background-color: rgb(45, 45, 45);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }

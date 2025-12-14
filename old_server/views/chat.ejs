@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <title>Two Sidebars Layout</title>
+
+    <style>
+        ::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b7b7b7; 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #868686; 
+}
+    </style>
+    
+</head>
+
+<body>
+
+    <% if(currentUser) { %>
+
+        <%- include('./partials/sidebar') %>
+
+        <div class="main-content">
+
+            <div id="contacts">
+                <div class="name" style="text-align: center; padding: 30px 0 0 0;">CHAT
+                    <i class="fa-brands fa-rocketchat"></i></div>
+    
+                <div class="contact" onclick="openChat('contact1', 'User 1')">
+                    <div class="details">
+                        <i class="fa-solid fa-user"></i>
+                        user1
+                    </div>
+                </div>
+    
+                <div class="contact" onclick="openChat('contact2', 'User 2')">
+                    <div class="details">
+                        <i class="fa-solid fa-user"></i>
+                        user2
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('contact1', 'User 3')">
+                    <div class="details">
+                        <i class="fa-solid fa-user"></i>
+                        user3
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('contact1', 'User 4')">
+                    <div class="details">
+                        <i class="fa-solid fa-user"></i>
+                        user4
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('contact1', 'User 1')">
+                    <div class="details">
+                        <i class="fa-solid fa-user"></i>
+                        user5
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('contact1', 'User 1')">
+                    <div class="details">
+                        <i class="fa-solid fa-user"></i>
+                        user6
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('contact1', 'User 1')">
+                    <div class="details">
+                        <i class="fa-solid fa-user"></i>
+                        user7
+                    </div>
+                </div>
+    
+                <div class="contact" onclick="openChat('contact1', 'User 1')">
+                    <div class="details">
+                        <i class="fa-solid fa-user"></i>
+                        user8
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('contact1', 'User 1')">
+                    <div class="details">
+                        <i class="fa-solid fa-user"></i>
+                        user9
+                    </div>
+                </div>
+            </div>
+    
+            <div class="chat-field">
+    
+                <div id="chat">
+                <div class="contact-box" id="header">
+                    <div class="contact-name">User 1</div>
+                    <!-- <div class="call-icon"><i class="fas fa-phone"></i></div> -->
+                </div>
+                
+                <div id="contact1" class="chat-window">
+                    <div class="message-container" id="contact1-messages">
+    
+                    </div>
+                </div>
+    
+                <div id="contact2" class="chat-window">
+                    <div class="message-container" id="contact2-messages">
+    
+                    </div>
+                </div>
+    
+    
+                <!-- Add more chat windows as needed -->
+                <div id="input-bar" class="message-input">
+                    <input type="text" placeholder="Type your message" id="message-input"
+                        onkeypress="handleKeyPress(event)">
+                    <!-- Use Font Awesome send icon -->
+                    <button class="send-button" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+    
+    
+            </div>
+    
+        </div>
+    
+
+        <% } else{ %>
+            <p>You are not logged in.</p>
+            <% } %>
+
+            <script>
+                function openChat(contactId, contactName) {
+                    const chatWindows = document.querySelectorAll('.chat-window');
+                    chatWindows.forEach(window => {
+                        window.style.display = 'none';
+                    });
+                    const chatWindow = document.getElementById(contactId);
+                    chatWindow.style.display = 'block';
+                    currentChatId = contactId;
+        
+                    // Show the message input when a contact is clicked
+                    const inputBar = document.getElementById('input-bar');
+                    inputBar.style.display = 'block';
+        
+                    const header = document.getElementById('header');
+                    header.style.display = 'block';
+        
+                    // Set the contact name at the top of the chat window
+                    const contactNameElement = chatWindow.querySelector('.contact-name');
+                    contactNameElement.textContent = contactName;
+                }
+        
+                function sendMessage() {
+                    const messageInput = document.getElementById('message-input');
+                    const currentChatWindow = document.getElementById(currentChatId);
+                    const messageContainer = currentChatWindow.querySelector('.message-container');
+                    const messageText = messageInput.value.trim();
+        
+                    if (messageText !== '') {
+                        // Create a new message container and style it
+                        const messageElement = document.createElement('div');
+                        messageElement.classList.add('message');
+                        // Alternate between left and right message styles
+                        if (messageContainer.children.length % 2 === 0) {
+                            messageElement.classList.add('message-left');
+                        } else {
+                            messageElement.classList.add('message-right');
+                        }
+                        messageElement.innerText = messageText;
+        
+                        // Append the new message container to the message container
+                        messageContainer.appendChild(messageElement);
+        
+                        // Clear the input field after sending the message
+                        messageInput.value = '';
+                    }
+                }
+        
+                function handleKeyPress(event) {
+                    if (event.key === 'Enter') {
+                        sendMessage();
+                    }
+                }
+        
+                let currentChatId = 'contact1'; // Initialize the current chat ID
+            </script>
+
+<%- include('./partials/footer') %>

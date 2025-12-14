@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+  <div class="login-box">
+    <button><img src="images/google.png">sign in with google</button>
+    <hr>
+    <span>Or</span>
+    <form action="/login" method="post">
+      <input type="text" placeholder="name" name="username" required autocomplete="off">
+      <input type="password" placeholder="password" name="password" required autocomplete="off">
+      <button type="submit">Submit</button>
+    </form>
+    <button>Forget password</button>
+    <p style="text-align: center;">Don't have an account? <a href="/register">Sign up</a></p>
+
+  </div>
+
+  <script>
+    const form = document.getElementById('myForm');
+    const usernameInput = document.getElementById('username');
+
+    form.addEventListener('submit', function (event) {
+      if (!usernameInput.checkValidity()) {
+        event.preventDefault(); // Prevent form submission
+        alert('Please enter a valid username.');
+      }
+    });
+  </script>
+             <%- include('./partials/footer') %>

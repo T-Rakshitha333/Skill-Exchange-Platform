@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skill Search Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/sidebar.css">
+  <style>
+    /* Make sure that padding behaves as expected */
+
+/* Container for the search bar and the skill list */
+.navbar {
+        background-color: black;
+        color: white;
+      padding: 10px;
+      position: fixed;
+      width: 77%;
+      top: 0;
+      border-radius: 0 0 10px 10px;
+    }
+
+    /* Style for the main content */
+    .list {
+      padding: 20px;
+      margin-top: 120px; /* To push content below the fixed navbar */
+    }
+
+    /* Add some height to make content scrollable */
+    .content {
+      height: 2000px;
+    }
+
+
+/* Style the search bar */
+#searchbar {
+    width: 100%;
+    margin: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/* Style the skill list */
+#list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the skill list items */
+.skills {
+  display: list-item;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style the skill list links */
+.skills a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Change the color of the skill list links on hover */
+.skills a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+
+  <% if(currentUser, skillsData) { %>
+
+    <%- include('./partials/sidebar') %>
+
+    <div class="main-content">
+
+    <div class="navbar">
+      <h1 style="margin: 0 10px;">Search for a skill</h1>
+      <input id="searchbar" onkeyup="search_skill()" type="text" name="search" placeholder="Search skills.." autocomplete="off">
+    </div>
+  
+    <!-- Main content -->
+      <div class="list">
+        <ul id="list">
+          <% skillsData.forEach(skill=> { %>
+            <li class="skills"><a href="/quiz/<%= skill._id %>"><%= skill.skill %></a></li>
+            <% }); %>
+        </ul>
+      </div>    
+    
+  </div>
+  <% } else { %>
+    <p>Not able to update profile</p>
+    <% } %>
+  <script>
+    // Get the search bar input element
+var input = document.getElementById("searchbar");
+
+// Get the skill list element
+var list = document.getElementById("list");
+
+// Get all the skill list items
+var skills = list.getElementsByTagName("li");
+
+// Define a function to search for a skill
+function search_skill() {
+  
+  // Get the input value and convert it to lower case
+  var value = input.value.toLowerCase();
+
+  // Loop through all the skill list items
+  for (var i = 0; i < skills.length; i++) {
+
+    // Get the link element inside the skill list item
+    var link = skills[i].getElementsByTagName("a")[0];
+
+    // Get the text content of the link element and convert it to lower case
+    var text = link.textContent.toLowerCase();
+
+    // Check if the input value is a substring of the text content
+    if (text.indexOf(value) > -1) {
+
+      // If yes, display the skill list item
+      skills[i].style.display = "";
+    } else {
+
+      // If no, hide the skill list item
+      skills[i].style.display = "none";
+    }
+  }
+}
+
+
+  </script>
+
+<%- include('./partials/footer') %>

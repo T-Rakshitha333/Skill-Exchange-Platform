@@ -1,0 +1,172 @@
+.main-content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+#contacts {
+    width: 20%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    box-sizing: content-box;
+    border-radius: 10px;
+}
+
+.details i {
+    margin: 0 10px;
+}
+
+
+#chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.contact {
+    cursor: pointer;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    /* Add border radius to each contact */
+    transition: background-color 0.3s ease;
+    /* Add smooth hover effect */
+}
+
+.contact:hover {
+    background-color: #444;
+    /* Change background color on hover */
+}
+
+.chat-window {
+    display: none;
+    padding: 20px;
+    color: #000;
+    overflow-y: scroll;
+    border: 1px solid silver;
+    width: 95%;
+    height: 1150px;
+    margin: 10px 0;
+    margin-top: 90px;
+    border-radius: 5px;
+}
+
+
+.message-input {
+    display: none;
+}
+
+.message-input {
+    width: 95%;
+    height: 20%;
+}        
+
+.message-input input {
+    width: 90%;
+    /* Adjusted width to 90% */
+    padding: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.send-button {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 3px;
+    height: 60px;
+    width: 9%;
+}
+
+.send-icon {
+    font-size: 18px;
+}
+
+.message-container {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+/* Style for the contact box */
+#header {
+    display: none;
+}
+
+.contact-box {
+    width: 59%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #100f0f;
+    /* Background color for the box */
+    position: fixed;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Style for the call icon in the contact box */
+.call-icon {
+    font-size: 20px;
+    color: #fff;
+    /* Adjust color as needed */
+}
+
+.contact-name {
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    margin: 10px;
+}
+
+
+.message-left {
+    width: fit-content;
+    display: flex;
+    bottom: 50px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: auto;
+    border: 1px solid silver;
+}
+
+/* Style for right-aligned message */
+.message-right {
+    width: fit-content;
+    background-color: #D4EBC6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+.chat-field{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

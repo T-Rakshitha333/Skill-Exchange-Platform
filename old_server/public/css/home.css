@@ -1,0 +1,171 @@
+.user-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .user-card {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 60%;
+    height: auto;
+    margin: 20px auto;
+    padding: 5px 15px;
+    background-color: #fff;
+  }
+
+  .user-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Style for the user avatar */
+  .user-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* Style for connect button */
+  .connect-button,
+  .pending {
+    background-color: #ffffff;
+    color: #0A66C2;
+    border: 1px solid #0A66C2;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 40px;
+    padding: 5px 10px;
+    transition: background-color 0.2s;
+  }
+
+  .connect-button i {
+    margin: 0 3px;
+  }
+
+  .connect-button i {
+    font-size: 15px;
+    margin: 0 10px 0 0;
+  }
+/* 
+  .connect-button:hover {
+    background-color: #cde0f4;
+  } */
+
+  .user-body {
+    margin-top: 10px;
+  }
+
+  .skills,
+  .interests {
+    margin: 5px;
+  }
+
+  .tile {
+    background-color: rgba(255, 255, 255, 0.859);
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+    padding: 5px 20px;
+    height: 10%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    border: 1px solid grey;
+    ;
+  }
+
+  .skill span {
+    font-size: 15px;
+  }
+
+  .matched-skill {
+    background-color: #ddffdd;
+  }
+
+  .matched-interest {
+    background-color: #ddddff;
+  }
+
+  .connection-req {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    padding: 10px;
+    background-color: #000;
+    border-radius: 5px;
+  }
+
+  /* Styling for the accept button */
+  .accept-button {
+    background-color: #fff;
+    color: black;
+    border: 1px solid gray;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px;
+    /* Decreased the margin */
+    cursor: pointer;
+    border-radius: 45px;
+  }
+
+  /* Styling for the reject button */
+  .reject-button {
+    background-color: #fff;
+    color: black;
+    border: 1px solid gray;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px;
+    /* Decreased the margin */
+    cursor: pointer;
+    border-radius: 45px;
+  }
+
+  /* Styling for the username */
+  h4 {
+    color: #fff;
+    margin: 0;
+  }
+
+  hr {
+    color: rgb(167, 167, 167);
+    margin: 0;
+  }
+
+  .user-name h5 a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    margin: 0 12px;
+  }
+
+  .user-name h5 a:hover{
+    text-decoration: underline;
+    color: black;
+  }
+
+  

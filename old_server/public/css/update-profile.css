@@ -1,0 +1,118 @@
+ /* Profile edit form container */
+ .profile-edit-container {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Form input fields */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Image preview */
+#image-preview {
+  max-width: 100%;
+  max-height: 200px;
+}
+
+/* Define a custom width and horizontal margin for the body */
+  .container {
+    width: 80%; /* Adjust the width as per your preference */
+    margin: 0 20%; /* Equal margin from both right and left ends */
+    padding: 20px;
+    background-color: rgba(8, 8, 8, 0.9); /* Semi-transparent white background */
+    border-radius: 30px;
+    border: 2px solid rgb(86, 168, 212);
+  }
+  
+  .card-body {
+    width: 800px;
+    height: 100vh;
+  }
+
+.dropdown {
+  position: relative;
+  margin-top: 10px;
+}
+
+/* Dropdown list styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background-color: #fff;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Selected role chip styles */
+.selected-roles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.selected-role {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #c0c0c0;
+  border-radius: 20px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.selected-role .close {
+  margin-left: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Edit Profile button styles */
+#update-profile-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#update-profile:hover {
+  background-color: #0056b3;
+}
+
+/* Form layout adjustments */
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.col-sm-8 {
+  flex: 0 0 100%;
+  max-width: 80%;
+}
+
+.roleList1 li{
+  list-style: none;
+}
