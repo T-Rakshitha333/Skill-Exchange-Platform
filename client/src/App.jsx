@@ -7,7 +7,7 @@ import Home from './Pages/Home';
 import Chat from './Pages/Chat';
 import Profile from './Pages/Profile';
 import Playground from './Pages/Playground';
-import UserProfile from './Pages/UserProfile'; // Import the UserProfile component
+import UserProfile from './Pages/UserProfile';
 
 // css
 import './css/Navbar.css';
@@ -21,12 +21,11 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Chat" element={<Chat />} />
-        <Route path="/Playground" element={<Playground />} />
-        <Route path="/Profile" element={<Profile/>}/>
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/playground" element={<Playground />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/users/:userId" element={<Profile />} />
-
-        <Route path="/Profile/:userId" element={<UserProfile />} />
+        <Route path="/profile/:userId" element={<UserProfile />} />
       </Routes>
     </Router>
   );
